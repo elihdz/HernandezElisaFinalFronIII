@@ -1,14 +1,30 @@
-import React from 'react'
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
+import { DataContext } from './utils/data.context';
 
 const Navbar = () => {
 
+  const [, , , , mode, changeMode] = useContext(DataContext);
+
+  const handleThemeChange = () =>{
+    changeMode();
+  }
+
   return (
-    <nav>
-      {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
-      {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-      <button>Change theme</button>
+    <nav className={`nav ${mode === 'dark' ? 'dark' : 'light'}`}>
+      <Link to="/" className='site-title'>DH Odonto</Link>
+      <ul>
+        <li>
+          <Link to="/" className='home'>Inicio</Link>
+        </li>
+        <li>
+        <Link to="/contact" className='contact'>Contacto</Link>
+        </li>
+        <li>
+          <Link to="/favs" className='favs'>Favoritos</Link>
+        </li>
+      </ul>
+      <button onClick={handleThemeChange}>Cambiar de tema</button>
     </nav>
   )
 }

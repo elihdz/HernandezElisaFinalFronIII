@@ -1,15 +1,26 @@
-import React from "react";
+import { useState } from "react";
 
+function Form({ label, name, type, onChange, ...props }) {
+	const [focused, setFocused] = useState(false);
 
-const Form = () => {
-  //Aqui deberan implementar el form completo con sus validaciones
+	const handleFocus = () => setFocused(true);
 
-  return (
-    <div>
-      <form>
-      </form>
-    </div>
-  );
+	const handleBlur = () => setFocused(false);
+
+	return (
+		<div className={`form ${focused ? 'focused' : ''}`}>
+			<label htmlFor={name}>{label}</label>
+			<input
+				{...props}
+				id={name}
+				name={name}
+				type={type}
+				onChange={onChange}
+				onFocus={handleFocus}
+				onBlur={handleBlur}
+			/>
+		</div>
+	);
 };
 
 export default Form;

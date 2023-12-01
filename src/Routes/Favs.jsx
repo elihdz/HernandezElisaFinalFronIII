@@ -1,18 +1,29 @@
-import React from "react";
+import React,{useContext} from "react";
 import Card from "../Components/Card";
+import { DataContext } from "../Components/utils/data.context";
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+
 
 const Favs = () => {
-
+  const [data,setData,favoritos,setFavoritos, mode] = useContext(DataContext);
   return (
-    <>
-      <h1>Dentists Favs</h1>
-      <div className="card-grid">
-        {/* este componente debe consumir los destacados del localStorage */}
-        {/* Deberan renderizar una Card por cada uno de ellos */}
+
+  <main className={` ${mode === 'dark' ? 'dark' : 'light'}`}>
+
+
+      <h1>Favoritos</h1>
+      <div className={'card-grid'}>  
+        {
+          favoritos.map((favoritos,index) =>(
+            <Card
+              key={index} {...favoritos}
+            ></Card>
+          ))
+        }
+
       </div>
-    </>
+
+  </main>
   );
 };
 

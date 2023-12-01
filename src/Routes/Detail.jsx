@@ -1,19 +1,32 @@
-import React from 'react'
 
+import React, { useEffect, useState } from 'react'
+import { useParams, useHistory } from "react-router-dom";
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Detail = () => {
- 
-  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
+  let { id } = useParams();
+  const [data, setData] = useState([]);
+  
+  // Dentro de este useEffect puedes realizar un fetch a tu API y obtener el usuario específico
+  useEffect(() => { // obtener user en especifico
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch((error) => console.error("Error"))
+  }, [id]);
+
+
+  // Armamos una condicional para manejar los casos en que el usuario buscado no exista.
+  if (!data) return <h1>No se encontró el usuario</h1>
 
   return (
-    <>
-      <h1>Detail Dentist id </h1>
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
-    </>
+    <div>
+      <h1> Detalle del profesional {data.id} </h1>
+      <p>Nombre: {data.name}</p>
+      <p>email: {data.email}</p>
+      <p>Telefono: {data.phone}</p>
+      <p>Pagina web: {data.website}</p>
+    </div>
   )
 }
-
-export default Detail
+export default Detail;
