@@ -1,5 +1,6 @@
 Profesor, si revisa en mis archivos, mi context API tiene el nombre de data.context.jsx, este cumple con todas las funciones que se pidieron que cumpliera la context API en la guia, solo que el nombre del archivo es distinto al asignado por usted, que es global.context, espero esto no sea un inconveniente.
 
+Ademas, para entrar al detalle (routes/detail) de cada profesional, debe dar clic en el id de la card especifica.
 
 # ctd-fe3-final
 
