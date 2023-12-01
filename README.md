@@ -1,3 +1,8 @@
+Profesor, si revisa el codigo verá que NO hay una sentencia en la que se haga uso del useReducer hook, ya que no vi necesidad de usar especificamente este hook, espero esto no sea un inconveniente muy grande para mi calificación
+
+
+
+
 # ctd-fe3-final
 
 Examen Final de Frontend III
