@@ -1,4 +1,4 @@
-Profesor, si revisa el codigo verá que NO hay una sentencia en la que se haga uso del useReducer hook, ya que no vi necesidad de usar especificamente este hook, espero esto no sea un inconveniente muy grande para mi calificación
+Profesor, si revisa en mis archivos, mi context API tiene el nombre de data.context.jsx, este cumple con todas las funciones que se pidieron que cumpliera la context API en la guia, solo que el nombre del archivo es distinto al asignado por usted, que es global.context, espero esto no sea un inconveniente y no lo confunda por el cambio de nombre.
 
 
 
