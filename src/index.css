@@ -78,25 +78,25 @@ a:hover{
 
 footer {
   display: flex;
-  justify-content: space-between; /* Distribuye los elementos a los lados */
-  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: space-between; 
+  align-items: center; 
   text-align: center;
   padding: 2rem;
   position: relative;
   background-color: black;
-  color: white; /* Color del texto */
+  color: white; 
 }
 
 .social-icons img {
-  max-width: 50px; /* Tamaño máximo de las imágenes */
-  margin: 0 10px; /* Espaciado entre las imágenes */
+  max-width: 50px; 
+  margin: 0 10px; 
 }
 
 .dh-logo {
-  max-width: 100px; /* Ajusta el tamaño de la imagen DH */
+  max-width: 100px; 
   color-scheme: white;
 }
-.grayscale { filter: grayscale(100%); }
+
 
 
 form{
@@ -185,6 +185,22 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.detail:hover{
+  color: rgb(136, 136, 136);
+}
+
+h1 {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+p {
+  border: 1px solid #ddd; 
+  padding: 10px;
+  margin: 0;
+}
+
 
 .dark{
   background-color: #12121296;

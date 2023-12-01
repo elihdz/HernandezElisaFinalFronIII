@@ -7,8 +7,7 @@ const Detail = () => {
   let { id } = useParams();
   const [data, setData] = useState([]);
   
-  // Dentro de este useEffect puedes realizar un fetch a tu API y obtener el usuario específico
-  useEffect(() => { // obtener user en especifico
+  useEffect(() => { 
     fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then(response => response.json())
       .then(data => setData(data))
